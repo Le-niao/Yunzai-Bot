@@ -136,6 +136,12 @@ let config = {
     API_KEY:    "",
     SECRET_KEY: "",
   },
+
+  // puppeteer 相关配置
+  puppeteer: {
+    // 自定义chromium路径，不填则使用npm安装的
+    executablePath: '',
+  },
 };
 
 export { config };
