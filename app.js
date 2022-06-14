@@ -40,14 +40,12 @@ Bot.on("system.login.device", function (e) {
   this.logger.info("2.网页扫码验证")
   process.stdin.once("data", (choice) => {
     if(choice===1){
-      // this.logger.mark("触发短信验证")
       this.sendSmsCode()
       this.logger.mark("请输入短信验证码:")
       process.stdin.once("data", (str) => {
         this.submitSmsCode(str)
       });
     }else{
-      // this.logger.mark("触发网页扫码验证")
       this.logger.mark("扫码完成后回车以登录")
       process.stdin.once("data", () => {
         this.login()
