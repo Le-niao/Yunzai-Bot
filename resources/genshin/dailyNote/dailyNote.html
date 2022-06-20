@@ -73,7 +73,7 @@
             <div class="name">探索派遣</div>
             <div class="time">
               {{if !expeditions || expeditions.length<=0}}尚未进行派遣
-              {{else if remained_time && remained_time!=0}}将于{{remained_time}} 完成
+              {{else if remained_time && remained_time!=0}}最快完成于{{remained_time_fastest}}，将于{{remained_time}}全部完成
               {{else}}派遣已完成{{/if}}
             </div>
           </div>
