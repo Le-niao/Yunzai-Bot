@@ -42,12 +42,12 @@ let config = {
   ],
   allowUseNoteCookie: false, // 是否允许Bot使用NoteCookie中的记录进行查询
   roleAllAvatar: false, // #角色 命令下是否展示全部角色 true：展示全部角色，false：展示12个角色，默认false
-  DisablePrivate:false, //禁用私聊功能 true：私聊只接受ck以及抽卡链接（Bot主人不受限制），false：私聊可以触发全部指令，默认false
+  disablePrivate:false, //禁用私聊功能 true：私聊只接受ck以及抽卡链接（Bot主人不受限制），false：私聊可以触发全部指令，默认false
   //默认cookie帮助文档链接地址，其他ck帮助链接
   //www.wolai.com/tremorstar/jRjczxsfdsmzWDaDVVwVEM
   //yakultoo.feishu.cn/docs/doccnnepmeWeweGSbjgBM8vIsCe
   cookieDoc: "docs.qq.com/doc/DUWNVQVFTU3liTVlO",
-  DisableMsg:"私聊已禁用", //禁用私聊Bot提示内容
+  disableMsg:"私聊已禁用", //禁用私聊Bot提示内容
   //推送任务
   pushTask: {
     signTime: "0 2 0 * * ?", //签到任务执行时间，Cron表达式，默认00:02开始执行，每10s签到一个
