@@ -22,7 +22,7 @@ if [[ -z $(git status -s) ]]; then
     git pull origin master --allow-unrelated-histories --rebase
     git stash pop
 else
-    git pull origin master --allow-unrelated-histories --rebase
+    git pull origin master --allow-unrelated-histories
 fi
 
 echo -e "\n ================ \n ${Version} ${BlueBG} Yunzai-Bot 版本信息 ${Font} \n ================ \n"
@@ -42,7 +42,7 @@ if [ -d $MIAO_PLUGIN_PATH"/.git" ]; then
         git pull origin master --allow-unrelated-histories --rebase
         git stash pop
     else
-        git pull origin master --allow-unrelated-histories --rebase
+        git pull origin master --allow-unrelated-histories
     fi
 
     echo -e "\n ================ \n ${Version} ${BlueBG} 喵喵插件版本信息 ${Font} \n ================ \n"
@@ -60,7 +60,7 @@ if [ -d $XIAOYAO_CVS_PATH"/.git" ]; then
         git pull origin master --allow-unrelated-histories --rebase
         git stash pop
     else
-        git pull origin master --allow-unrelated-histories --rebase
+        git pull origin master --allow-unrelated-histories
     fi
     echo -e "\n ================ \n ${Version} ${BlueBG} xiaoyao-cvs 插件版本信息 ${Font} \n ================ \n"
     git log -1 --pretty=format:"%h - %an, %ar (%cd) : %s"
