@@ -12,6 +12,7 @@ Warn="${YellowBG}[提示]${Font}"
 
 WORK_DIR="/app/Yunzai-Bot"
 MIAO_PLUGIN_PATH="/app/Yunzai-Bot/plugins/miao-plugin"
+XIAOYAO_CVS_PATH="/app/Yunzai-Bot/plugins/xiaoyao-cvs-plugin"
 
 echo -e "\n ================ \n ${Info} ${GreenBG} 拉取 Yunzai-Bot 更新 ${Font} \n ================ \n"
 if [[ -z $(git status -s) ]]; then
@@ -33,7 +34,7 @@ npm install
 if [ -d $MIAO_PLUGIN_PATH ]; then
     echo -e "\n ================ \n ${Info} ${GreenBG} 拉取喵喵插件更新 ${Font} \n ================ \n"
     cd $MIAO_PLUGIN_PATH
-    if [[! -d "./.git"]]; then
+    if [! -d $MIAO_PLUGIN_PATH"/.git"]; then
         git init
         git remote set-url origin https://gitee.com/yoimiya-kokomi/miao-plugin.git
     fi
@@ -54,7 +55,7 @@ fi
 if [ -d $XIAOYAO_CVS_PATH ]; then
     echo -e "\n ================ \n ${Info} ${GreenBG} 拉取 xiaoyao-cvs 插件更新 ${Font} \n ================ \n"
     cd $XIAOYAO_CVS_PATH
-    if [[! -d "./.git"]]; then
+    if [! -d $XIAOYAO_CVS_PATH"/.git"]; then
         git init
         git remote set-url origin https://gitee.com/Ctrlcvs/xiaoyao-cvs-plugin.git
     fi
@@ -74,5 +75,5 @@ fi
 
 cd $WORK_DIR
 
-echo -e "\n ======== \n ${Info} ${GreenBG} 启动 Yunzai-Bot ${Font} \n ======== \n"
+echo -e "\n ================ \n ${Info} ${GreenBG} 启动Yunzai-Bot ${Font} \n ================ \n"
 node app
