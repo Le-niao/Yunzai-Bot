@@ -36,6 +36,8 @@ if [ -d $MIAO_PLUGIN_PATH ]; then
     if [[! -d "./.git"]]; then
         git init
         git remote set-url origin https://gitee.com/yoimiya-kokomi/miao-plugin.git
+    fi
+
     if [[ ! -z $(git status -s) ]]; then
         echo -e " ${Warn} ${YellowBG} 当前工作区有修改，尝试暂存后更新。${Font}"
         git add .
@@ -55,6 +57,8 @@ if [ -d $XIAOYAO_CVS_PATH ]; then
     if [[! -d "./.git"]]; then
         git init
         git remote set-url origin https://gitee.com/Ctrlcvs/xiaoyao-cvs-plugin.git
+    fi
+    
     if [[ ! -z $(git status -s) ]]; then
         echo -e " ${Warn} ${YellowBG} 当前工作区有修改，尝试暂存后更新。${Font}"
         git add .
