@@ -19,10 +19,10 @@ if [[ -z $(git status -s) ]]; then
     echo -e " ${Warn} ${YellowBG} 当前工作区有修改，尝试暂存后更新。${Font}"
     git add .
     git stash
-    git pull origin master --allow-unrelated-histories
+    git pull origin master --allow-unrelated-histories --rebase
     git stash pop
 else
-    git pull origin master --allow-unrelated-histories
+    git pull origin master --allow-unrelated-histories --rebase
 fi
 
 echo -e "\n ================ \n ${Version} ${BlueBG} Yunzai-Bot 版本信息 ${Font} \n ================ \n"
@@ -31,43 +31,36 @@ git log -1 --pretty=format:"%h - %an, %ar (%cd) : %s"
 echo -e "\n ================ \n ${Info} ${GreenBG} 更新 Yunzai-Bot 运行依赖 ${Font} \n ================ \n"
 npm install
 
-if [ -d $MIAO_PLUGIN_PATH ]; then
+if [ -d $MIAO_PLUGIN_PATH"/.git" ]; then
     echo -e "\n ================ \n ${Info} ${GreenBG} 拉取喵喵插件更新 ${Font} \n ================ \n"
     cd $MIAO_PLUGIN_PATH
-    if [! -d $MIAO_PLUGIN_PATH"/.git"]; then
-        git init
-        git remote set-url origin https://gitee.com/yoimiya-kokomi/miao-plugin.git
-    fi
 
     if [[ ! -z $(git status -s) ]]; then
         echo -e " ${Warn} ${YellowBG} 当前工作区有修改，尝试暂存后更新。${Font}"
         git add .
         git stash
-        git pull origin master --allow-unrelated-histories
+        git pull origin master --allow-unrelated-histories --rebase
         git stash pop
     else
-        git pull origin master --allow-unrelated-histories
+        git pull origin master --allow-unrelated-histories --rebase
     fi
+
     echo -e "\n ================ \n ${Version} ${BlueBG} 喵喵插件版本信息 ${Font} \n ================ \n"
     git log -1 --pretty=format:"%h - %an, %ar (%cd) : %s"
 fi
 
-if [ -d $XIAOYAO_CVS_PATH ]; then
+if [ -d $XIAOYAO_CVS_PATH"/.git" ]; then
     echo -e "\n ================ \n ${Info} ${GreenBG} 拉取 xiaoyao-cvs 插件更新 ${Font} \n ================ \n"
     cd $XIAOYAO_CVS_PATH
-    if [! -d $XIAOYAO_CVS_PATH"/.git"]; then
-        git init
-        git remote set-url origin https://gitee.com/Ctrlcvs/xiaoyao-cvs-plugin.git
-    fi
     
     if [[ ! -z $(git status -s) ]]; then
         echo -e " ${Warn} ${YellowBG} 当前工作区有修改，尝试暂存后更新。${Font}"
         git add .
         git stash
-        git pull origin master --allow-unrelated-histories
+        git pull origin master --allow-unrelated-histories --rebase
         git stash pop
     else
-        git pull origin master --allow-unrelated-histories
+        git pull origin master --allow-unrelated-histories --rebase
     fi
     echo -e "\n ================ \n ${Version} ${BlueBG} xiaoyao-cvs 插件版本信息 ${Font} \n ================ \n"
     git log -1 --pretty=format:"%h - %an, %ar (%cd) : %s"
