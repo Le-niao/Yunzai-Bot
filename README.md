@@ -6,7 +6,7 @@
 v3.0重构版本，[功能](https://github.com/Le-niao/Yunzai-Bot/tree/main/plugins/genshin)缓慢咕咕中。。。
 
 ## 使用方法
->环境准备： Windows or Linux，Node.js（[版本至少v16以上](http://nodejs.cn/download/)），[Redis](resources/readme/命令说明.md#window安装redis)
+>环境准备： Windows or Linux，Node.js（[版本至少v16以上](http://nodejs.cn/download/)），[Redis](https://github.com/Le-niao/Yunzai-Bot/blob/master/resources/readme/命令说明.md#window安装redis)
 
 1.克隆项目
 ```
